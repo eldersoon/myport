@@ -127,3 +127,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "public"),
     '/var/www/static/',
 ]
+
+# media URL
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
+
+# LOGIN CONFIG
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = 'home'

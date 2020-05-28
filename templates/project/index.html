@@ -10,7 +10,13 @@
 </head>
 
 <body>
-    piloca
+    <a href="{% url 'logout' %}">sair</a><br />
+    index.html - <a href="{% url 'projects.create' %}">criar</a>
+    <ul>
+        {% for project in projects %}
+            <li>{{project.title}} - <a href="{% url 'projects.update' project.id %}">editar</a> - <a href="{% url 'projects.delete' project.id %}">deletar</a> </li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
