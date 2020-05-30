@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LoginView as login, LogoutView as logout
 
-from .views import home
+from .views import home, test
 from projects import urls as projects_url
 
 # Development only:
@@ -31,4 +31,5 @@ urlpatterns = [
     path('login/', login.as_view(), name='login'),
     path('', home, name='home'),
     path('projects/', include(projects_url)),
+    path('test/', test, name='test')
 ]
