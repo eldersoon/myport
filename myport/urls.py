@@ -27,9 +27,9 @@ from projects import urls as projects_url
 # TO END OF urlpatterns[]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('vsfv/', admin.site.urls),
     path('login/', login.as_view(), name='login'),
     path('', home, name='home'),
-    path('projects/', include(projects_url)),
+    path('dimim/', include(projects_url)),
     path('test/', test, name='test')
 ]

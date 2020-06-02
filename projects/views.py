@@ -16,13 +16,15 @@ from .forms import ProjectForm
 @login_required
 def index(request):
     projects = Project.objects.all()
+    title = 'Projetos'
 
-    return render(request, 'project/index.html', {'projects': projects})
+    return render(request, 'project/index.html', {'projects': projects, 'title': title})
 
 
 @login_required
 def create(request):
     form = ProjectForm(request.POST or None, request.FILES or None)
+    title = 'Criar projeto'
 
     if request.method == 'POST':
         if form.is_valid():
@@ -37,13 +39,14 @@ def update(request, id):
     project = get_object_or_404(Project, pk=id)
     form = ProjectForm(request.POST or None,
                        request.FILES or None, instance=project)
+    title = 'Editar projeto'
 
     if request.method == 'POST':
         if form.is_valid():
             form.save()
             return redirect('projects.index')
 
-    return render(request, 'project/update.html', {'form': form})
+    return render(request, 'project/update.html', {'form': form, 'title': title})
 
 
 @login_required
@@ -52,6 +55,11 @@ def delete(request, id):
     project.delete()
 
     return redirect('projects.index')
+
+
+def admin(request):
+    title = 'Dashboard'
+    return render(request, 'layouts/dashboard.html', {'title': title})
 
 
 def logout_adm(request):
