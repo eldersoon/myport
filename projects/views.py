@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from django.contrib.auth import logout
 # Auth require to access views
 from django.contrib.auth.decorators import login_required
 
@@ -55,14 +54,3 @@ def delete(request, id):
     project.delete()
 
     return redirect('projects.index')
-
-
-def admin(request):
-    title = 'Dashboard'
-    return render(request, 'layouts/dashboard.html', {'title': title})
-
-
-def logout_adm(request):
-    logout(request)
-
-    return redirect('login')

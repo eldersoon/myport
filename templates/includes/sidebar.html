@@ -5,14 +5,32 @@
     Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-      Creative Tim
+      Admin
     </a></div>
   <div class="sidebar-wrapper">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'admin' %}">
+        <a class="nav-link" href="{% url 'dashboard' %}">
           <i class="material-icons">dashboard</i>
           <p>Dashboard</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'home.index' %}">
+          <i class="material-icons">reorder</i>
+          <p>Seção Início</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'aboutme.index' %}">
+          <i class="material-icons">account_circle</i>
+          <p>Sobre mim</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'aboutme.index' %}">
+          <i class="material-icons">language</i>
+          <p>Tecnologias</p>
         </a>
       </li>
       <li class="nav-item ">

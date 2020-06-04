@@ -17,19 +17,27 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LoginView as login, LogoutView as logout
 
-from .views import home, test
+from .views import site, test, logout_adm, admin_site
 from projects import urls as projects_url
+from home import urls as home_url
+from aboutme import urls as aboutme_url
+from techs import urls as techs_url
 
 # Development only:
-# from django.conf import settings
-# from django.conf.urls.static import static
+from django.conf import settings
+from django.conf.urls.static import static
 # ADD: + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # TO END OF urlpatterns[]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = [
     path('vsfv/', admin.site.urls),
     path('login/', login.as_view(), name='login'),
-    path('', home, name='home'),
+    path('logout/', logout_adm, name='logout'),
+    path('', site, name='site'),
+    path('dimim/dashboard', admin_site, name='dashboard'),
     path('dimim/', include(projects_url)),
-    path('test/', test, name='test')
-]
+    path('dimim/', include(home_url)),
+    path('dimim/', include(aboutme_url)),
+    path('dimim/', include(techs_url)),
+    path('test/', test, name='test'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

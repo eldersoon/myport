@@ -11,8 +11,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -62,12 +62,12 @@
       <div class="row">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1>Minha carreira como <span>Desenvolvedor</span></h1>
-            <h2>Formação, projetos, habilidades, principais tecnologias entre outras informações...</h2>
+            <h1>{{home.title}} <span>{{home.sub_line_title}}</span></h1>
+            <h2>{{home.subtitle}}</h2>
           </div>
         </div>
         <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
-          <img src="{% static 'img/hero-img.png' %}" class="img-fluid animated" alt="">
+          <img src="{{home.image.url}}" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
@@ -96,13 +96,15 @@
       <div class="container-fluid">
 
         <div class="row">
-          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
-            
+          <div class="col-xl-5 col-lg-6 d-flex justify-content-center align-items-stretch" data-aos="fade-right">
+            <img src="{{home.image.url}}" class="img-fluid animated" alt="">
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
-            <h3><\Formação></h3>
-            <p>Tecnólogo em Sistemas para Internet, me formei na Universidade Estadual de Ciêncisa da Saúde de Alagoas em 2019.2. Ainda durante a graduação tive a oportunidade de participar de projetos acadêmicos com foco no desenvolvimento mobile, além de ter participação em projetos web extracurriculares.</p>
+            <h3>{{aboutme.title}}</h3>
+            <p>
+              {{aboutme.description}} 
+            </p>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon"><i class="bx bx-paint"></i></div>

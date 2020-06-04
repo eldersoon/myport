@@ -1,0 +1,38 @@
+{% extends 'layouts/dashboard.html' %}
+
+{% block title %}Sessão início{% endblock %}
+
+{% block content %}
+<div class="col-md-12">
+    {% if not home %}
+    <a href="{% url 'home.create' %}" class="btn btn-info">Criar conteúdo</a>
+    {% endif %}
+
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title ">Sessão início</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">
+                        <th class="">Título</th>
+                        <th class="">Açoes</th>
+                    </thead>
+                    <tbody>
+                        {% if home %}
+                        <tr>
+                            <td>{{ home.title }}</td>
+                            <td>
+                                <a href="{% url 'home.update' home.id %}" class="btn btn-primary">Editar</a>
+                                <a href="{% url 'home.delete' home.id %}" class="btn btn-danger">Deletar</a>
+                            </td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

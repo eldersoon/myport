@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import index, create, update, delete, logout_adm, admin
+from .views import index, create, update, delete
 
 # Development only:
 # from django.conf import settings
@@ -9,10 +9,8 @@ from .views import index, create, update, delete, logout_adm, admin
 # TO END OF urlpatterns[]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = [
-    path('', admin, name='admin'),
-    path('projects', index, name='projects.index'),
+    path('projects/', index, name='projects.index'),
     path('create/', create, name='projects.create'),
     path('update/<int:id>', update, name='projects.update'),
     path('delete/<int:id>', delete, name='projects.delete'),
-    path('logout/', logout_adm, name='logout')
 ]
