@@ -5,26 +5,26 @@
 {% block content %}
 <div class="col-md-12">
 
-    <a href="{% url 'projects.create' %}" class="btn btn-info">Criar projeto</a>
-  
+    <a href="{% url 'techs.create' %}" class="btn btn-info">Criar tecnologia</a>
+
     <div class="card">
         <div class="card-header card-header-primary">
-            <h4 class="card-title ">Projetos</h4>
+            <h4 class="card-title ">Tecnologias</h4>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table">
                     <thead class=" text-primary">
-                        <th class="">Título</th>
+                        <th class="">Technologia</th>
                         <th class="">Açoes</th>
                     </thead>
                     <tbody>
-                        {% for project in projects %}
+                        {% for tech in techs %}
                             <tr>
-                                <td>{{ project.title }}</td>
+                                <td>{{ tech.tech }}</td>
                                 <td>
-                                    <a href="{% url 'projects.update' project.id %}" class="btn btn-primary">Editar</a>
-                                    <a href="{% url 'projects.delete' project.id %}" class="btn btn-danger">Deletar</a>
+                                    <a href="{% url 'techs.update' tech.id %}" class="btn btn-primary">Editar</a>
+                                    <a href="{% url 'techs.delete' tech.id %}" class="btn btn-danger">Deletar</a>
                                 </td>
                             </tr>
                         {% endfor %}

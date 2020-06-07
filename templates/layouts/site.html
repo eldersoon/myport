@@ -140,78 +140,14 @@
         </div>
 
         <div class="row" data-aos="fade-left">
-          <div class="col-lg-3 col-md-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
-              <i class="devicon-html5-plain-wordmark colored"></i>
-              <h3>HTML5</h3>
+          {% for tech in techs %}
+            <div class="col-lg-3 col-md-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                <i class="{{tech.icon}} colored"></i>
+                <h3>{{tech.tech}}</h3>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-              <i class="devicon-css3-plain-wordmark colored"></i>
-              <h3>CSS</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
-              <i class="devicon-javascript-plain colored"></i>
-              <h3>Javascript</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-              <i class="devicon-react-original-wordmark colored"></i>
-              <h3>React JS</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
-              <i class="devicon-nodejs-plain colored"></i>
-              <h3>Node JS</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
-              <i class="devicon-postgresql-plain colored"></i>
-              <h3>Postgre</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
-              <i class="devicon-python-plain colored"></i>
-              <h3>Python</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="450">
-              <i class="devicon-django-plain colored"></i>
-              <h3>Django</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="500">
-              <i class="devicon-bootstrap-plain colored"></i>
-              <h3>Bootstrap</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="550">
-              <i class="devicon-git-plain colored"></i>
-              <h3>Git</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="600">
-              <i class="devicon-php-plain colored"></i>
-              <h3>PHP</h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="600">
-              <i class="devicon-laravel-plain colored"></i>
-              <h3>Laravel</h3>
-            </div>
-          </div>
+          {% endfor %}
         </div>
 
       </div>

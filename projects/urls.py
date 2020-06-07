@@ -10,7 +10,7 @@ from .views import index, create, update, delete
 
 urlpatterns = [
     path('projects/', index, name='projects.index'),
-    path('create/', create, name='projects.create'),
-    path('update/<int:id>', update, name='projects.update'),
-    path('delete/<int:id>', delete, name='projects.delete'),
+    path('projects/create/', create, name='projects.create'),
+    path('projects/update/<int:id>', update, name='projects.update'),
+    path('projects/delete/<int:id>', delete, name='projects.delete'),
 ]

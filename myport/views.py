@@ -5,14 +5,18 @@ from django.contrib.auth import logout
 
 from home.models import Home
 from aboutme.models import Aboutme
+from techs.models import Tech
 
 
 def site(request):
     home = Home.objects.first()
     aboutme = Aboutme.objects.first()
+    techs = Tech.objects.all()
+
     return render(request, 'layouts/site.html', {
         'home': home,
         'aboutme': aboutme,
+        'techs': techs,
     })
 
 
