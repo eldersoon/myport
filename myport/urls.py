@@ -22,6 +22,7 @@ from projects import urls as projects_url
 from home import urls as home_url
 from aboutme import urls as aboutme_url
 from techs import urls as techs_url
+from sendmail import urls as email_urls
 
 # Development only:
 from django.conf import settings
@@ -34,6 +35,7 @@ urlpatterns = [
     path('login/', login.as_view(), name='login'),
     path('logout/', logout_adm, name='logout'),
     path('', site, name='site'),
+    path('', include(email_urls)),
     path('dimim/dashboard', admin_site, name='dashboard'),
     path('dimim/', include(projects_url)),
     path('dimim/', include(home_url)),
