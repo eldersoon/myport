@@ -45,7 +45,7 @@ def update(request, id):
 
 
 def delete(request, id):
-    Aboutme = get_object_or_404(Aboutme, pk=id)
-    Aboutme.delete()
+    aboutme = get_object_or_404(Aboutme, pk=id)
+    aboutme.delete()
 
     return redirect('aboutme.index')
