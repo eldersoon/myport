@@ -30,7 +30,7 @@ def create(request):
             form.save()
             return redirect('projects.index')
 
-    return render(request, 'project/create.html', {'form': form})
+    return render(request, 'project/create.html', {'form': form, 'title': title})
 
 
 @login_required

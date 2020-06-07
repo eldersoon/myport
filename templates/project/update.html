@@ -3,10 +3,17 @@
 {% block title %} Atualizar {% endblock %}
 
 {% block content %}
-    FORMULÁRIO DE ATUALIZAÇÃO
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title ">{{title}}</h4>
+    </div>
+    <div class="card-body">
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{form|bootstrap}}
         <button type="submit" class="btn btn-primary">Save</button>
+        <a href="{% url 'projects.index' %}" class="btn btn-info">Voltar</a>
     </form>
+    </div>
+</div>
 {% endblock %}

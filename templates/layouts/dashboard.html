@@ -255,13 +255,12 @@
   </script>
 
   <script>
-    var url = window.location;
-    // Will only work if string in href matches with location
-    $('ul.nav li a[href="'+ url +'"]').parent().addClass('active');
-    
+    var url = window.location.pathname.split('/');
+
     // Will also work for relative and absolute hrefs
     $('ul.nav li a').filter(function() {
-        return this.href == url;
+        link = this.href
+        return link.includes(url[2]);
     }).parent().addClass('active');
   </script>
 </body>
