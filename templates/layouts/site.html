@@ -43,10 +43,22 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#header">Inicio</a></li>
-          <li><a href="#about">Sobre mim</a></li>
-          <li><a href="#techs">Tecnologias</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          {% if home %}
+            <li class="active"><a href="#header">Inicio</a></li>
+          {% endif %}
+
+          {% if aboutme %}
+            <li><a href="#about">Sobre mim</a></li>
+          {% endif %}
+
+          {% if techs %}
+            <li><a href="#techs">Tecnologias</a></li>
+          {% endif %}
+
+          {% if projects %}
+            <li><a href="#portfolio">Portfolio</a></li>
+          {% endif %}
+
           <li><a href="#contact">Contato</a></li>
 
         </ul>
@@ -56,13 +68,14 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
+  {% if home %}
   <section id="hero">
 
     <div class="container">
       <div class="row">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1>{{home.title}} <span>{{home.sub_line_title}}</span></h1>
+            <h1>{{home.title}}<span>{{home.sub_line_title}}</span></h1>
             <h2>{{home.subtitle}}</h2>
           </div>
         </div>
@@ -88,9 +101,10 @@
     </svg>
 
   </section><!-- End Hero -->
+  {% endif %}
 
   <main id="main">
-
+    {% if aboutme %}
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container-fluid">
@@ -129,8 +143,9 @@
 
       </div>
     </section><!-- End About Section -->
-
+    {% endif %}
     <!-- ======= techs Section ======= -->
+    {% if techs %}
     <section id="techs" class="features">
       <div class="container">
 
@@ -152,8 +167,10 @@
 
       </div>
     </section><!-- End Features Section -->
+    {% endif %}
 
     <!-- ======= portfolio Section ======= -->
+    {% if projects %}
     <section id="portfolio" class="gallery">
       <div class="container">
 
@@ -182,6 +199,7 @@
         </div>
       </div>
     </section><!-- End Gallery Section -->
+    {% endif %}
 
     <!-- ======= DEPOSITION Section ======= -->
     <!-- <section id="testimonials" class="testimonials">
