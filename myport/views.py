@@ -8,6 +8,8 @@ from aboutme.models import Aboutme
 from techs.models import Tech
 from projects.models import Project
 
+from django.contrib.auth.decorators import login_required
+
 
 def site(request):
     home = Home.objects.first()
@@ -22,7 +24,7 @@ def site(request):
         'projects': projects
     })
 
-
+@login_required
 def admin_site(request):
     title = 'Dashboard'
     return render(request, 'layouts/dashboard.html', {'title': title})
